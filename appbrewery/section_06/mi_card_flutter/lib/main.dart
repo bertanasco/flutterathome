@@ -9,17 +9,17 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-          backgroundColor: Colors.teal.shade600,
+          backgroundColor: Colors.blue.shade900,
           body: SafeArea(
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 CircleAvatar(
-                  backgroundColor: Colors.red,
                   backgroundImage: AssetImage('images/caden.png'),
-                  radius: 50,
+                  radius: 65,
                 ),
                 Text(
-                  'Caden Añasco',
+                  'Blake Caden Añasco',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 35,
@@ -30,10 +30,17 @@ class MyApp extends StatelessWidget {
                 Text(
                   'PLANET DESTROYER',
                   style: TextStyle(
-                    color: Colors.teal.shade100,
+                    color: Colors.blue.shade100,
                     fontFamily: 'SourceSansPro',
                     fontSize: 20,
                     letterSpacing: 2.5,
+                  ),
+                ),
+                SizedBox(
+                  height: 20.0,
+                  width: 200.0,
+                  child: Divider(
+                    color: Colors.blue.shade100,
                   ),
                 ),
                 Card(
@@ -45,13 +52,14 @@ class MyApp extends StatelessWidget {
                   child: ListTile(
                     leading: Icon(
                       Icons.phone,
-                      color: Colors.teal.shade800,
+                      color: Colors.blue.shade800,
                     ),
+                    subtitle: Text('14344 talaga dapat'),
                     title: Text(
                       '+63 917 1433 123',
                       style: TextStyle(
                         fontSize: 20,
-                        color: Colors.teal.shade800,
+                        color: Colors.blue.shade800,
                       ),
                     ),
                   ),
@@ -65,15 +73,16 @@ class MyApp extends StatelessWidget {
                   child: ListTile(
                     leading: Icon(
                       Icons.email,
-                      color: Colors.teal.shade800,
+                      color: Colors.blue.shade800,
                     ),
                     title: Text(
                       'blakecaden@mama.com',
                       style: TextStyle(
                         fontSize: 20,
-                        color: Colors.teal.shade800,
+                        color: Colors.blue.shade800,
                       ),
                     ),
+                    subtitle: Text('email niyo po nanay ko'),
                   ),
                 ),
               ],
