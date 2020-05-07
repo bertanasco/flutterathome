@@ -16,7 +16,8 @@ class MyApp extends StatelessWidget {
             child: Text('Test yo yo lorem '),
             height: 100.0,
             width: 100.0,
-            margin: EdgeInsets.only(left: 20),
+            margin: EdgeInsets.only(left: 20), //outside
+            padding: EdgeInsets.all(20.0), //inside
           ),
         ),
       ),
