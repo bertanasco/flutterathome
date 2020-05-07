@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-          backgroundColor: Colors.blue.shade900,
+          backgroundColor: Colors.teal.shade600,
           body: SafeArea(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
                 Text(
                   'PLANET DESTROYER',
                   style: TextStyle(
-                    color: Colors.blue.shade100,
+                    color: Colors.teal.shade100,
                     fontFamily: 'SourceSansPro',
                     fontSize: 20,
                     letterSpacing: 2.5,
@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
                   height: 20.0,
                   width: 200.0,
                   child: Divider(
-                    color: Colors.blue.shade100,
+                    color: Colors.teal.shade100,
                   ),
                 ),
                 Card(
@@ -52,14 +52,14 @@ class MyApp extends StatelessWidget {
                   child: ListTile(
                     leading: Icon(
                       Icons.phone,
-                      color: Colors.blue.shade800,
+                      color: Colors.teal.shade800,
                     ),
                     subtitle: Text('14344 talaga dapat'),
                     title: Text(
                       '+63 917 1433 123',
                       style: TextStyle(
                         fontSize: 20,
-                        color: Colors.blue.shade800,
+                        color: Colors.teal.shade800,
                       ),
                     ),
                   ),
@@ -73,13 +73,13 @@ class MyApp extends StatelessWidget {
                   child: ListTile(
                     leading: Icon(
                       Icons.email,
-                      color: Colors.blue.shade800,
+                      color: Colors.teal.shade800,
                     ),
                     title: Text(
                       'blakecaden@mama.com',
                       style: TextStyle(
                         fontSize: 20,
-                        color: Colors.blue.shade800,
+                        color: Colors.teal.shade800,
                       ),
                     ),
                     subtitle: Text('email niyo po nanay ko'),
