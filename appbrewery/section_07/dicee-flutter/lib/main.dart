@@ -26,8 +26,8 @@ class _DicePageStateFulState extends State<DicePageStateFul> {
   var rightDiceNumber = 1;
   void randomDiceNumbers() {
     setState(() {
-      leftDiceNumber = Random().nextInt(5) + 1;
-      rightDiceNumber = Random().nextInt(5) + 1;
+      leftDiceNumber = Random().nextInt(6) + 1;
+      rightDiceNumber = Random().nextInt(6) + 1;
     });
   }
 
