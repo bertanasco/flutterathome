@@ -9,6 +9,17 @@ class XylophoneApp extends StatelessWidget {
     player.play('note$noteNumber.wav');
   }
 
+  Widget generateFlatButton({Color color, int noteNumber}) {
+    return Expanded(
+      child: FlatButton(
+        color: color,
+        onPressed: () {
+          playNote(noteNumber);
+        },
+      ),
+    );
+  }
+
   List<Widget> generateFlatButtons() {
     List<Widget> flatButtons = List<Widget>();
     for (var i = 1; i < 8; i++) {
@@ -32,61 +43,33 @@ class XylophoneApp extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              Expanded(
-                child: FlatButton(
-                  color: Colors.red,
-                  onPressed: () {
-                    playNote(1);
-                  },
-                ),
+              generateFlatButton(
+                color: Colors.red,
+                noteNumber: 1,
               ),
-              Expanded(
-                child: FlatButton(
-                  color: Colors.orange,
-                  onPressed: () {
-                    playNote(2);
-                  },
-                ),
+              generateFlatButton(
+                color: Colors.orange,
+                noteNumber: 2,
               ),
-              Expanded(
-                child: FlatButton(
-                  color: Colors.yellow,
-                  onPressed: () {
-                    playNote(3);
-                  },
-                ),
+              generateFlatButton(
+                color: Colors.yellow,
+                noteNumber: 3,
               ),
-              Expanded(
-                child: FlatButton(
-                  color: Colors.green,
-                  onPressed: () {
-                    playNote(4);
-                  },
-                ),
+              generateFlatButton(
+                color: Colors.green,
+                noteNumber: 4,
               ),
-              Expanded(
-                child: FlatButton(
-                  color: Colors.greenAccent,
-                  onPressed: () {
-                    playNote(5);
-                  },
-                ),
+              generateFlatButton(
+                color: Colors.greenAccent,
+                noteNumber: 5,
               ),
-              Expanded(
-                child: FlatButton(
-                  color: Colors.blue,
-                  onPressed: () {
-                    playNote(6);
-                  },
-                ),
+              generateFlatButton(
+                color: Colors.blue,
+                noteNumber: 6,
               ),
-              Expanded(
-                child: FlatButton(
-                  color: Colors.deepPurple,
-                  onPressed: () {
-                    playNote(7);
-                  },
-                ),
+              generateFlatButton(
+                color: Colors.deepPurple,
+                noteNumber: 7,
               ),
             ],
           ),
