@@ -43,34 +43,13 @@ class XylophoneApp extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              generateFlatButton(
-                color: Colors.red,
-                noteNumber: 1,
-              ),
-              generateFlatButton(
-                color: Colors.orange,
-                noteNumber: 2,
-              ),
-              generateFlatButton(
-                color: Colors.yellow,
-                noteNumber: 3,
-              ),
-              generateFlatButton(
-                color: Colors.green,
-                noteNumber: 4,
-              ),
-              generateFlatButton(
-                color: Colors.greenAccent,
-                noteNumber: 5,
-              ),
-              generateFlatButton(
-                color: Colors.blue,
-                noteNumber: 6,
-              ),
-              generateFlatButton(
-                color: Colors.deepPurple,
-                noteNumber: 7,
-              ),
+              generateFlatButton(color: Colors.red, noteNumber: 1),
+              generateFlatButton(color: Colors.orange, noteNumber: 2),
+              generateFlatButton(color: Colors.yellow, noteNumber: 3),
+              generateFlatButton(color: Colors.green, noteNumber: 4),
+              generateFlatButton(color: Colors.greenAccent, noteNumber: 5),
+              generateFlatButton(color: Colors.blue, noteNumber: 6),
+              generateFlatButton(color: Colors.deepPurple, noteNumber: 7),
             ],
           ),
         ),
