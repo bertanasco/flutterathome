@@ -9,30 +9,14 @@ class XylophoneApp extends StatelessWidget {
     player.play('note$noteNumber.wav');
   }
 
-  Widget generateFlatButton({Color color, int noteNumber}) {
-    return Expanded(
-      child: FlatButton(
-        color: color,
-        onPressed: () {
-          playNote(noteNumber);
-        },
-      ),
-    );
-  }
-
-  List<Widget> generateFlatButtons() {
-    List<Widget> flatButtons = List<Widget>();
-    for (var i = 1; i < 8; i++) {
-      flatButtons.add(
-        FlatButton(
-          color: Colors.red,
+  Widget generateFlatButton({Color color, int noteNumber}) => Expanded(
+        child: FlatButton(
+          color: color,
           onPressed: () {
-            playNote(i);
+            playNote(noteNumber);
           },
         ),
       );
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
