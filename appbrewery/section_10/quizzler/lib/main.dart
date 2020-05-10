@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 import 'controller/QuestionBank.dart';
 
 QuestionBank qb = QuestionBank();
@@ -28,6 +29,18 @@ class QuizPage extends StatefulWidget {
 
 class _QuizPageState extends State<QuizPage> {
   List<Icon> scoreKeeper = [];
+  int correct = 0;
+
+  void reset() {
+    scoreKeeper = [];
+    correct = 0;
+    qb.reset();
+  }
+
+  void showScore() {
+    print("test done");
+    reset();
+  }
 
   void checkAnswer(bool answer) {
     if (answer == qb.getQuestionAnswer()) {
@@ -35,11 +48,31 @@ class _QuizPageState extends State<QuizPage> {
         Icons.check,
         color: Colors.green,
       ));
+      correct++;
     } else {
       scoreKeeper.add(Icon(
         Icons.close,
         color: Colors.red,
       ));
+    }
+    if (qb.isQuizEnd()) {
+      Alert(
+        context: context,
+        type: AlertType.info,
+        title: "Score $correct",
+        desc: "",
+        buttons: [
+          DialogButton(
+            child: Text(
+              "Ok",
+              style: TextStyle(color: Colors.white, fontSize: 20),
+            ),
+            onPressed: () => Navigator.pop(context),
+            width: 120,
+          )
+        ],
+      ).show();
+      showScore();
     }
   }
 

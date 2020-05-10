@@ -31,10 +31,18 @@ class QuestionBank {
         true),
   ];
 
+  void reset() {
+    _questionIndex = 0;
+  }
+
   String nextQuestion() {
-    if (_questionIndex < _questionList.length) {
-      return _questionList[_questionIndex].question;
+    String question = '';
+
+    if (_questionIndex < _questionList.length - 1) {
+      question = getQuestionText();
+      _questionIndex++;
     }
+    return question;
   }
 
   String getQuestionText() {
@@ -43,6 +51,10 @@ class QuestionBank {
 
   bool getQuestionAnswer() {
     return _questionList[_questionIndex].answer;
+  }
+
+  bool isQuizEnd() {
+    return _questionIndex == _questionList.length - 1;
   }
 
   int getQuestionLength() {
