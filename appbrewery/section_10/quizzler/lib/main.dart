@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'controller/QuestionBank.dart';
 
+QuestionBank qb = QuestionBank();
 void main() => runApp(Quizzler());
 
 class Quizzler extends StatelessWidget {
@@ -25,17 +27,10 @@ class QuizPage extends StatefulWidget {
 }
 
 class _QuizPageState extends State<QuizPage> {
-  int questionIndex = 0;
-  final List<String> questions = [
-    'You can lead a cow down stairs but not up stairs.',
-    'Approximately one quarter of human bones are in the feet.',
-    'A slug\'s blood is green.'
-  ];
-  final List<bool> answers = [false, true, true];
   List<Icon> scoreKeeper = [];
 
-  void checkAnswer({bool answer, int questionIndex}) {
-    if (answer == answers[questionIndex]) {
+  void checkAnswer(bool answer) {
+    if (answer == qb.getQuestionAnswer()) {
       scoreKeeper.add(Icon(
         Icons.check,
         color: Colors.green,
@@ -45,11 +40,6 @@ class _QuizPageState extends State<QuizPage> {
         Icons.close,
         color: Colors.red,
       ));
-    }
-    questionIndex++;
-    if (questionIndex == 3) {
-      questionIndex = 0;
-      scoreKeeper = [];
     }
   }
 
@@ -65,7 +55,7 @@ class _QuizPageState extends State<QuizPage> {
             padding: EdgeInsets.all(10.0),
             child: Center(
               child: Text(
-                questions[questionIndex],
+                qb.nextQuestion(),
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 25.0,
@@ -90,11 +80,7 @@ class _QuizPageState extends State<QuizPage> {
               ),
               onPressed: () {
                 setState(() {
-                  checkAnswer(answer: true, questionIndex: questionIndex);
-                  questionIndex++;
-                  if (questionIndex == questions.length - 1) {
-                    questionIndex = 0;
-                  }
+                  checkAnswer(true);
                 });
               },
             ),
@@ -114,7 +100,7 @@ class _QuizPageState extends State<QuizPage> {
               ),
               onPressed: () {
                 setState(() {
-                  checkAnswer(answer: false, questionIndex: questionIndex);
+                  checkAnswer(false);
                 });
               },
             ),
